@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explora Tours El Salvador: sitio turístico educativo con destinos, itinerarios, paquetes, reserva simulada e información de contacto.">
+  <title>Explora Tours El Salvador</title>
+
+  <!-- Bootstrap: necesario para menú responsive, tarjetas, modales y acordeones -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- CSS del equipo: Sofia puede personalizar colores, tamaños, animaciones y responsive -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Estilos mínimos temporales para que el menú superior redirija bien a cada sección -->
+  <style>
+    html { scroll-behavior: smooth; }
+    section[id] { scroll-margin-top: 95px; }
+  </style>
+</head>
+
+<body>
+
+  <!-- ========================================================= -->
+  <!-- BARRA SUPERIOR DE CONTACTO                                -->
+  <!-- Inspirada en páginas turísticas reales: teléfono, correo   -->
+  <!-- y datos rápidos antes del menú principal.                  -->
+  <!-- ========================================================= -->
+  <aside class="bg-dark text-white py-2">
+    <section class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+      <p class="mb-0 small">📞 WhatsApp: 7000-0000 | ✉️ contacto@exploratourssv.com</p>
+      <p class="mb-0 small">Viajes nacionales | Paquetes de un día y de varios días</p>
+    </section>
+  </aside>
+
+
+  <!-- ========================================================= -->
+  <!-- MENÚ PRINCIPAL SUPERIOR                                   -->
+  <!-- Este menú redirige a las demás secciones del mismo HTML.   -->
+  <!-- No abre otras páginas: usa enlaces internos con #id.       -->
+  <!-- ========================================================= -->
+  <header class="sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+      <section class="container">
+        <a class="navbar-brand fw-bold text-primary" href="#inicio">Explora Tours SV</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <section class="collapse navbar-collapse" id="menuPrincipal">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
+            <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="#mejores-lugares">Mejores lugares</a></li>
+            <li class="nav-item"><a class="nav-link" href="#itinerarios">Itinerarios</a></li>
+            <li class="nav-item"><a class="nav-link" href="#reserva">Reserva</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+            <li class="nav-item ms-lg-3"><a class="btn btn-primary" href="#reserva">Reservar ahora</a></li>
+          </ul>
+        </section>
+      </section>
+    </nav>
+  </header>
+
+
+  <!-- ========================================================= -->
+  <!-- CONTENIDO PRINCIPAL                                       -->
+  <!-- Todo el sitio está en un solo archivo index.html.          -->
+  <!-- ========================================================= -->
+  <main>
+
+
+    <!-- ======================================================= -->
+    <!-- SECCIÓN 1: INICIO                                       -->
+    <!-- Objetivo: atrapar al usuario con una portada visual.     -->
+    <!-- Base de página real: galería grande + datos rápidos.     -->
+    <!-- ======================================================= -->
+    <section id="inicio" class="py-5 bg-light">
+      <section class="container">
+        <section class="row align-items-center g-5">
+
+          <!-- Texto principal del inicio -->
+          <article class="col-lg-5">
+            <span class="badge bg-warning text-dark mb-3">Turismo en El Salvador</span>
+
+            <h1 class="display-4 fw-bold text-primary">
+              Montañas, historia, pueblos y playa en una sola aventura
+            </h1>
+
+            <p class="lead text-muted">
+              Explora Tours El Salvador te ayuda a conocer los destinos más atractivos del país
+              con paquetes de un día, itinerarios de varios días y reservas simuladas.
+            </p>
+
+            <section class="d-flex flex-wrap gap-3 mt-4">
+              <a href="#mejores-lugares" class="btn btn-primary btn-lg">Explorar destinos</a>
+              <a href="#itinerarios" class="btn btn-outline-primary btn-lg">Ver itinerarios</a>
+            </section>
+
+            <!-- Datos rápidos -->
+            <section class="row text-center mt-5 g-3">
+              <article class="col-4">
+                <h3 class="fw-bold text-success">12</h3>
+                <p class="small text-muted mb-0">destinos</p>
+              </article>
+
+              <article class="col-4">
+                <h3 class="fw-bold text-success">6</h3>
+                <p class="small text-muted mb-0">paquetes</p>
+              </article>
+
+              <article class="col-4">
+                <h3 class="fw-bold text-success">100%</h3>
+                <p class="small text-muted mb-0">El Salvador</p>
+              </article>
+            </section>
+          </article>
+
+          <!-- Galería principal inspirada en la página real -->
+          <article class="col-lg-7">
+            <!-- Las imágenes deben agregarse manualmente en img/ con estos nombres exactos -->
+            <section class="row g-3">
+              <figure class="col-md-8 mb-0">
+                <img src="img/el-tunco.jpg" class="img-fluid rounded shadow w-100" alt="Playa El Tunco">
+              </figure>
+
+              <section class="col-md-4 d-flex flex-column gap-3">
+                <figure class="mb-0">
+                  <img src="img/volcan-santa-ana.jpg" class="img-fluid rounded shadow" alt="Volcán de Santa Ana">
+                </figure>
+
+                <figure class="mb-0">
+                  <img src="img/lago-coatepeque.jpg" class="img-fluid rounded shadow" alt="Lago de Coatepeque">
+                </figure>
+              </section>
+
+              <figure class="col-md-4 mb-0">
+                <img src="img/ruta-flores.jpg" class="img-fluid rounded shadow" alt="Ruta de las Flores">
+              </figure>
+
+              <figure class="col-md-4 mb-0">
+                <img src="img/suchitoto.jpg" class="img-fluid rounded shadow" alt="Suchitoto">
+              </figure>
+
+              <figure class="col-md-4 mb-0 position-relative">
+                <img src="img/joya-ceren.jpg" class="img-fluid rounded shadow" alt="Joya de Cerén">
+                <figcaption class="position-absolute top-50 start-50 translate-middle text-white fw-bold bg-dark bg-opacity-75 px-3 py-2 rounded">
+                  + más lugares
+                </figcaption>
+              </figure>
+            </section>
+          </article>
+
+        </section>
+      </section>
+    </section>
+
+
+    <!-- ======================================================= -->
+    <!-- PRESENTACIÓN DE LA AGENCIA                              -->
+    <!-- Esta parte resume la propuesta de valor del sitio.       -->
+    <!-- ======================================================= -->
+    <section class="py-5">
+      <section class="container text-center">
+        <header class="mb-5">
+          <span class="badge bg-success mb-2">Explora con confianza</span>
+          <h2 class="fw-bold">Una forma fácil de conocer El Salvador</h2>
+          <p class="text-muted">
+            En un solo sitio encontrarás destinos turísticos, precios promocionales,
+            itinerarios organizados, datos importantes y una reserva simulada.
+          </p>
+        </header>
+
+        <section class="row g-4">
+          <article class="col-md-4">
+            <section class="card h-100 border-0 shadow-sm p-4">
+              <h3>🌋 Aventura</h3>
+              <p>Volcanes, miradores, parques naturales y rutas para quienes aman explorar.</p>
+            </section>
+          </article>
+
+          <article class="col-md-4">
+            <section class="card h-100 border-0 shadow-sm p-4">
+              <h3>🏛️ Cultura</h3>
+              <p>Pueblos coloniales, sitios arqueológicos, murales, café y tradiciones.</p>
+            </section>
+          </article>
+
+          <article class="col-md-4">
+            <section class="card h-100 border-0 shadow-sm p-4">
+              <h3>🌊 Playa</h3>
+              <p>Surf City, atardeceres, gastronomía costera y descanso frente al mar.</p>
+            </section>
+          </article>
+        </section>
+      </section>
+    </section>
+
+
+    <!-- ======================================================= -->
+    <!-- SECCIÓN 2: MEJORES LUGARES                              -->
+    <!-- 3 destinos destacados + 9 destinos adicionales.          -->
+    <!-- Base de página real: cards con imagen, precio y botón.   -->
+    <!-- ======================================================= -->
+    <section id="mejores-lugares" class="py-5 bg-light">
+      <section class="container">
+
+        <header class="text-center mb-5">
+          <span class="badge bg-danger mb-2">Promociones disponibles</span>
+          <h2 class="fw-bold">Los mejores sitios turísticos</h2>
+          <p class="text-muted">
+            Selección de destinos salvadoreños para viajes de un día, fines de semana
+            o paquetes grupales. Los precios son ficticios para el proyecto escolar.
+          </p>
+        </header>
+
+        <!-- DESTINOS DESTACADOS -->
+        <section class="mb-5">
+          <header class="mb-4">
+            <h3 class="fw-bold">Destinos destacados</h3>
+            <p class="text-muted">Tres lugares principales para iniciar la experiencia turística.</p>
+          </header>
+
+          <section class="row g-4">
+            <article class="col-md-4">
+              <section class="card h-100 shadow border-0">
+                <img src="img/el-tunco.jpg" class="card-img-top" alt="Playa El Tunco">
+                <section class="card-body">
+                  <span class="badge bg-danger mb-2">Promoción</span>
+                  <h4 class="card-title">Playa El Tunco</h4>
+                  <p class="card-text">Playa famosa por el surf, ambiente juvenil, restaurantes y atardeceres.</p>
+                  <p class="mb-1"><del>$35</del></p>
+                  <p class="fw-bold text-success">$25 por persona</p>
+
+                  <section class="d-flex gap-2 flex-wrap">
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalTunco">Ver más</button>
+                    <a href="#reserva" class="btn btn-outline-success">Reservar</a>
+                  </section>
+                </section>
+              </section>
+            </article>
+
+            <article class="col-md-4">
+              <section class="card h-100 shadow border-0">
+                <img src="img/lago-coatepeque.jpg" class="card-img-top" alt="Lago de Coatepeque">
+                <section class="card-body">
+                  <span class="badge bg-danger mb-2">Promoción</span>
+                  <h4 class="card-title">Lago de Coatepeque</h4>
+                  <p class="card-text">Lago volcánico ideal para descansar, fotografiar y compartir en familia.</p>
+                  <p class="mb-1"><del>$40</del></p>
+                  <p class="fw-bold text-success">$30 por persona</p>
+
+                  <section class="d-flex gap-2 flex-wrap">
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCoatepeque">Ver más</button>
+                    <a href="#reserva" class="btn btn-outline-success">Reservar</a>
+                  </section>
+                </section>
+              </section>
+            </article>
+
+            <article class="col-md-4">
+              <section class="card h-100 shadow border-0">
+                <img src="img/volcan-santa-ana.jpg" class="card-img-top" alt="Volcán de Santa Ana">
+                <section class="card-body">
+                  <span class="badge bg-danger mb-2">Promoción</span>
+                  <h4 class="card-title">Volcán de Santa Ana</h4>
+                  <p class="card-text">Destino perfecto para senderismo, aventura y vistas impresionantes.</p>
+                  <p class="mb-1"><del>$45</del></p>
+                  <p class="fw-bold text-success">$32 por persona</p>
+
+                  <section class="d-flex gap-2 flex-wrap">
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalSantaAna">Ver más</button>
+                    <a href="#reserva" class="btn btn-outline-success">Reservar</a>
+                  </section>
+                </section>
+              </section>
+            </article>
+          </section>
+        </section>
+
+        <!-- MÁS LUGARES -->
+        <section>
+          <header class="mb-4">
+            <h3 class="fw-bold">Más lugares para explorar</h3>
+            <p class="text-muted">Nueve opciones adicionales para seguir descubriendo El Salvador.</p>
+          </header>
+
+          <section class="row g-4">
+            <article class="col-md-4 col-lg-3">
+              <section class="card h-100 shadow-sm border-0">
+                <img src="img/ruta-flores.jpg" class="card-img-top" alt="Ruta de las Flores">
+                <section class="card-body">
+                  <h5>Ruta de las Flores</h5>
+                  <p>Pueblos coloridos, café, gastronomía y clima fresco.</p>
+                  <p class="fw-bold text-success">Desde $28</p>
+                  <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modalRutaFlores">Ver más</button>
+                </section>
+              </section>
+            </article>
+
+            <article class="col-md-4 col-lg-3">
+              <section class="card h-100 shadow-sm border-0">
+                <img src="img/suchitoto.jpg" class="card-img-top" alt="Suchitoto">
+                <section class="card-body">
+                  <h5>Suchitoto</h5>
+                  <p>Pueblo colonial con arte y vista al lago Suchitlán.</p>
+                  <p class="fw-bold text-success">Desde $27</p>
+                  <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modalSuchitoto">Ver más</button>
+                </section>
+              </section>
+            </article>
+
+            <article class="col-md-4 col-lg-3">
+              <section class="card h-100 shadow-sm border-0">
+                <img src="img/joya-ceren.jpg" class="card-img-top" alt="Joya de Cerén">
+                <section class="card-body">
+                  <h5>Joya de Cerén</h5>
+                  <p>Sitio arqueológico conocido como la Pompeya de América.</p>
+                  <p class="fw-bold text-success">Desde $20</p>
+                  <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modalJoyaCeren">Ver más</button>
+                </section>
+              </section>
+            </article>
+
+            <article class="col-md-4 col-lg-3">
+              <section class="card h-100 shadow-sm border-0">
+                <img src="img/tazumal.jpg" class="card-img-top" alt="Tazumal">
+                <section class="card-body">
+                  <h5>Tazumal</h5>
+                  <p>Importante sitio arqueológico ubicado en Chalchuapa.</p>
+                  <p class="fw-bold text-success">Desde $22</p>
+                  <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modalTazumal">Ver más</button>
+                </section>
+              </section>
+            </article>
+
+            <article class="col-md-4 col-lg-3">
+              <section class="card h-100 shadow-sm border-0">
+                <img src="img/el-boqueron.jpg" class="card-img-top" alt="El Boquerón">
+                <section class="card-body">
+                  <h5>El Boquerón</h5>
+                  <p>Parque natural en el volcán de San Salvador.</p>
+                  <p class="fw-bold text-success">Desde $18</p>
+                  <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modalBoqueron">Ver más</button>
+                </section>
+              </section>
+            </article>
+
+            <article class="col-md-4 col-lg-3">
+              <section class="card h-100 shadow-sm border-0">
+                <img src="img/cerro-verde.jpg" class="card-img-top" alt="Cerro Verde">
+                <section class="card-body">
+                  <h5>Cerro Verde</h5>
+                  <p>Parque natural con vistas a volcanes y clima fresco.</p>
+                  <p class="fw-bold text-success">Desde $24</p>
+                  <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modalCerroVerde">Ver más</button>
+                </section>
+              </section>
+            </article>
+
+            <article class="col-md-4 col-lg-3">
+              <section class="card h-100 shadow-sm border-0">
+                <img src="img/el-pital.jpg" class="card-img-top" alt="El Pital">
+                <section class="card-body">
+                  <h5>El Pital</h5>
+                  <p>Zona montañosa de clima frío, ideal para ecoturismo.</p>
+                  <p class="fw-bold text-success">Desde $35</p>
+                  <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modalPital">Ver más</button>
+                </section>
+              </section>
+            </article>
+
+            <article class="col-md-4 col-lg-3">
+              <section class="card h-100 shadow-sm border-0">
+                <img src="img/bahia-jiquilisco.jpg" class="card-img-top" alt="Bahía de Jiquilisco">
+                <section class="card-body">
+                  <h5>Bahía de Jiquilisco</h5>
+                  <p>Manglares, biodiversidad y paisajes costeros.</p>
+                  <p class="fw-bold text-success">Desde $38</p>
+                  <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modalJiquilisco">Ver más</button>
+                </section>
+              </section>
+            </article>
+
+            <article class="col-md-4 col-lg-3">
+              <section class="card h-100 shadow-sm border-0">
+                <img src="img/el-imposible.jpg" class="card-img-top" alt="Parque Nacional El Imposible">
+                <section class="card-body">
+                  <h5>El Imposible</h5>
+                  <p>Parque nacional con bosque, ríos y senderos naturales.</p>
+                  <p class="fw-bold text-success">Desde $40</p>
+                  <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modalImposible">Ver más</button>
+                </section>
+              </section>
+            </article>
+          </section>
+        </section>
+      </section>
+    </section>
+
+
+    <!-- ======================================================= -->
+    <!-- SECCIÓN 3: ITINERARIOS                                  -->
+    <!-- Base de página real: resumen del circuito, itinerario    -->
+    <!-- por días, incluye y no incluye.                          -->
+    <!-- ======================================================= -->
+    <section id="itinerarios" class="py-5">
+      <section class="container">
+
+        <header class="text-center mb-5">
+          <span class="badge bg-warning text-dark mb-2">Visita El Salvador en un día</span>
+          <h2 class="fw-bold">Itinerarios y paquetes turísticos</h2>
+          <p class="text-muted">
+            Paquetes diseñados para conocer varios lugares en una sola salida o vivir
+            una experiencia completa durante una semana.
+          </p>
+        </header>
+
+        <!-- PAQUETES DE UN DÍA -->
+        <section class="mb-5">
+          <header class="mb-4">
+            <h3 class="fw-bold">Paquetes de un día</h3>
+            <p class="text-muted">Ideales para grupos escolares, familias o visitantes con poco tiempo.</p>
+          </header>
+
+          <section class="row g-4">
+            <article class="col-md-6 col-lg-3">
+              <section class="card h-100 shadow border-0">
+                <img src="img/volcan-santa-ana.jpg" class="card-img-top" alt="Ruta Volcanes y Lago">
+                <section class="card-body">
+                  <span class="badge bg-success mb-2">Aventura</span>
+                  <h4>Ruta Volcanes y Lago</h4>
+                  <p>Recorrido para disfrutar naturaleza, caminata y paisajes volcánicos.</p>
+                  <ul class="small">
+                    <li>Cerro Verde</li>
+                    <li>Volcán de Santa Ana</li>
+                    <li>Lago de Coatepeque</li>
+                  </ul>
+                  <p><del>$55</del></p>
+                  <p class="fw-bold text-success">$42 por persona</p>
+                  <a href="#reserva" class="btn btn-primary w-100">Reservar paquete</a>
+                </section>
+              </section>
+            </article>
+
+            <article class="col-md-6 col-lg-3">
+              <section class="card h-100 shadow border-0">
+                <img src="img/ruta-flores.jpg" class="card-img-top" alt="Ruta de las Flores Express">
+                <section class="card-body">
+                  <span class="badge bg-info text-dark mb-2">Cultura</span>
+                  <h4>Ruta de las Flores Express</h4>
+                  <p>Pueblos coloridos, gastronomía, café, artesanías y clima fresco.</p>
+                  <ul class="small">
+                    <li>Nahuizalco</li>
+                    <li>Juayúa</li>
+                    <li>Apaneca</li>
+                    <li>Ataco</li>
+                  </ul>
+                  <p><del>$48</del></p>
+                  <p class="fw-bold text-success">$35 por persona</p>
+                  <a href="#reserva" class="btn btn-primary w-100">Reservar paquete</a>
+                </section>
+              </section>
+            </article>
+
+            <article class="col-md-6 col-lg-3">
+              <section class="card h-100 shadow border-0">
+                <img src="img/el-tunco.jpg" class="card-img-top" alt="Surf y Atardecer">
+                <section class="card-body">
+                  <span class="badge bg-primary mb-2">Playa</span>
+                  <h4>Surf y Atardecer</h4>
+                  <p>Experiencia costera para disfrutar playa, comida y fotografías.</p>
+                  <ul class="small">
+                    <li>Playa El Tunco</li>
+                    <li>Puerto de La Libertad</li>
+                    <li>Malecón turístico</li>
+                  </ul>
+                  <p><del>$40</del></p>
+                  <p class="fw-bold text-success">$28 por persona</p>
+                  <a href="#reserva" class="btn btn-primary w-100">Reservar paquete</a>
+                </section>
+              </section>
+            </article>
+
+            <article class="col-md-6 col-lg-3">
+              <section class="card h-100 shadow border-0">
+                <img src="img/joya-ceren.jpg" class="card-img-top" alt="Ruta Arqueológica">
+                <section class="card-body">
+                  <span class="badge bg-secondary mb-2">Historia</span>
+                  <h4>Ruta Arqueológica</h4>
+                  <p>Paquete para conocer la historia prehispánica de El Salvador.</p>
+                  <ul class="small">
+                    <li>Joya de Cerén</li>
+                    <li>San Andrés</li>
+                    <li>Tazumal</li>
+                  </ul>
+                  <p><del>$45</del></p>
+                  <p class="fw-bold text-success">$33 por persona</p>
+                  <a href="#reserva" class="btn btn-primary w-100">Reservar paquete</a>
+                </section>
+              </section>
+            </article>
+          </section>
+        </section>
+
+        <!-- ITINERARIO SEMANAL -->
+        <section class="mb-5">
+          <section class="row g-4">
+            <article class="col-lg-4">
+              <section class="card border-0 shadow h-100">
+                <section class="card-body">
+                  <span class="badge bg-danger mb-2">Paquete semanal</span>
+                  <h3 class="fw-bold">El Salvador en una semana</h3>
+                  <p>Itinerario para conocer ciudad, volcanes, pueblos, historia y playa en una experiencia completa de 7 días.</p>
+                  <p class="fw-bold text-success">Desde $210 por persona</p>
+                  <a href="#reserva" class="btn btn-success w-100">Reservar paquete semanal</a>
+                </section>
+              </section>
+            </article>
+
+            <article class="col-lg-8">
+              <section class="card border-0 shadow">
+                <header class="card-header bg-primary text-white">
+                  <h3 class="mb-0">Itinerario detallado</h3>
+                  <p class="mb-0 small">Recorrido sugerido de 7 días</p>
+                </header>
+
+                <section class="card-body">
+                  <section class="accordion" id="acordeonItinerario">
+                    <article class="accordion-item">
+                      <h4 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#diaUno">Día 1: San Salvador y El Boquerón</button>
+                      </h4>
+                      <section id="diaUno" class="accordion-collapse collapse show" data-bs-parent="#acordeonItinerario">
+                        <section class="accordion-body">Llegada, recorrido por el Centro Histórico de San Salvador y visita al Parque Nacional El Boquerón.</section>
+                      </section>
+                    </article>
+
+                    <article class="accordion-item">
+                      <h4 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#diaDos">Día 2: Ruta de las Flores</button>
+                      </h4>
+                      <section id="diaDos" class="accordion-collapse collapse" data-bs-parent="#acordeonItinerario">
+                        <section class="accordion-body">Visita a Nahuizalco, Juayúa, Apaneca y Concepción de Ataco.</section>
+                      </section>
+                    </article>
+
+                    <article class="accordion-item">
+                      <h4 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#diaTres">Día 3: Volcanes y Lago de Coatepeque</button>
+                      </h4>
+                      <section id="diaTres" class="accordion-collapse collapse" data-bs-parent="#acordeonItinerario">
+                        <section class="accordion-body">Recorrido por Cerro Verde, Volcán de Santa Ana y Lago de Coatepeque.</section>
+                      </section>
+                    </article>
+
+                    <article class="accordion-item">
+                      <h4 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#diaCuatro">Día 4: Ruta Arqueológica</button>
+                      </h4>
+                      <section id="diaCuatro" class="accordion-collapse collapse" data-bs-parent="#acordeonItinerario">
+                        <section class="accordion-body">Visita a Joya de Cerén, San Andrés y Tazumal para conocer parte de la historia prehispánica.</section>
+                      </section>
+                    </article>
+
+                    <article class="accordion-item">
+                      <h4 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#diaCinco">Día 5: Suchitoto y Lago Suchitlán</button>
+                      </h4>
+                      <section id="diaCinco" class="accordion-collapse collapse" data-bs-parent="#acordeonItinerario">
+                        <section class="accordion-body">Recorrido por calles coloniales, miradores, arte local y vista al lago Suchitlán.</section>
+                      </section>
+                    </article>
+
+                    <article class="accordion-item">
+                      <h4 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#diaSeis">Día 6: Surf City y Playa El Tunco</button>
+                      </h4>
+                      <section id="diaSeis" class="accordion-collapse collapse" data-bs-parent="#acordeonItinerario">
+                        <section class="accordion-body">Día de playa, gastronomía costera, fotografías y atardecer.</section>
+                      </section>
+                    </article>
+
+                    <article class="accordion-item">
+                      <h4 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#diaSiete">Día 7: Naturaleza y cierre del viaje</button>
+                      </h4>
+                      <section id="diaSiete" class="accordion-collapse collapse" data-bs-parent="#acordeonItinerario">
+                        <section class="accordion-body">Opción de visitar Bahía de Jiquilisco o Parque Nacional El Imposible según el grupo.</section>
+                      </section>
+                    </article>
+                  </section>
+                </section>
+              </section>
+            </article>
+          </section>
+        </section>
+
+        <!-- INCLUYE / NO INCLUYE -->
+        <section class="row g-4">
+          <article class="col-lg-6">
+            <section class="card h-100 border-success shadow-sm">
+              <header class="card-header bg-success text-white"><h3 class="mb-0">Incluye</h3></header>
+              <section class="card-body">
+                <ul class="list-unstyled">
+                  <li>✅ Transporte ida y vuelta</li>
+                  <li>✅ Guía turístico durante el recorrido</li>
+                  <li>✅ Itinerario organizado</li>
+                  <li>✅ Paradas para fotografías</li>
+                  <li>✅ Recomendaciones de seguridad</li>
+                  <li>✅ Información turística de cada destino</li>
+                </ul>
+              </section>
+            </section>
+          </article>
+
+          <article class="col-lg-6">
+            <section class="card h-100 border-danger shadow-sm">
+              <header class="card-header bg-danger text-white"><h3 class="mb-0">No incluye</h3></header>
+              <section class="card-body">
+                <ul class="list-unstyled">
+                  <li>❌ Comidas no especificadas</li>
+                  <li>❌ Gastos personales</li>
+                  <li>❌ Propinas</li>
+                  <li>❌ Actividades adicionales fuera del paquete</li>
+                  <li>❌ Hospedaje en paquetes de un día</li>
+                </ul>
+              </section>
+            </section>
+          </article>
+        </section>
+      </section>
+    </section>
+
+
+    <!-- ======================================================= -->
+    <!-- SECCIÓN 4: RESERVA                                      -->
+    <!-- Formulario visual. Pamela puede trabajar la simulación   -->
+    <!-- en js/script.js sin modificar la estructura HTML.        -->
+    <!-- ======================================================= -->
+    <section id="reserva" class="py-5 bg-light">
+      <section class="container">
+        <header class="text-center mb-5">
+          <span class="badge bg-primary mb-2">Reserva simulada</span>
+          <h2 class="fw-bold">Elige tu destino y reserva</h2>
+          <p class="text-muted">Completa el formulario para simular una reserva turística.</p>
+        </header>
+
+        <section class="row g-4 align-items-start">
+          <aside class="col-lg-4">
+            <section class="card border-0 shadow p-4">
+              <h3 class="fw-bold">Antes de reservar</h3>
+              <p>Verifica destino, paquete, fecha y cantidad de personas.</p>
+              <ul>
+                <li>Precios ficticios para el proyecto.</li>
+                <li>La reserva será simulada.</li>
+                <li>JavaScript validará los campos después.</li>
+              </ul>
+            </section>
+          </aside>
+
+          <article class="col-lg-8">
+            <form class="card border-0 shadow p-4" id="formReserva">
+              <section class="row g-3">
+                <section class="col-md-6">
+                  <label for="nombre" class="form-label">Nombre completo</label>
+                  <input type="text" id="nombre" class="form-control" placeholder="Escribe tu nombre">
+                </section>
+
+                <section class="col-md-6">
+                  <label for="correo" class="form-label">Correo electrónico</label>
+                  <input type="email" id="correo" class="form-control" placeholder="correo@ejemplo.com">
+                </section>
+
+                <section class="col-md-6">
+                  <label for="telefono" class="form-label">Teléfono</label>
+                  <input type="tel" id="telefono" class="form-control" placeholder="0000-0000">
+                </section>
+
+                <section class="col-md-6">
+                  <label for="fecha" class="form-label">Fecha del viaje</label>
+                  <input type="date" id="fecha" class="form-control">
+                </section>
+
+                <section class="col-md-6">
+                  <label for="destino" class="form-label">Destino turístico</label>
+                  <select id="destino" class="form-select">
+                    <option value="">Selecciona un destino</option>
+                    <option>Playa El Tunco</option>
+                    <option>Lago de Coatepeque</option>
+                    <option>Volcán de Santa Ana</option>
+                    <option>Ruta de las Flores</option>
+                    <option>Suchitoto</option>
+                    <option>Joya de Cerén</option>
+                    <option>Tazumal</option>
+                    <option>El Boquerón</option>
+                    <option>Cerro Verde</option>
+                    <option>El Pital</option>
+                    <option>Bahía de Jiquilisco</option>
+                    <option>Parque Nacional El Imposible</option>
+                  </select>
+                </section>
+
+                <section class="col-md-6">
+                  <label for="personas" class="form-label">Cantidad de personas</label>
+                  <input type="number" id="personas" class="form-control" min="1" placeholder="Ejemplo: 4">
+                </section>
+
+                <section class="col-12">
+                  <label for="paquete" class="form-label">Tipo de paquete</label>
+                  <select id="paquete" class="form-select">
+                    <option value="">Selecciona un paquete</option>
+                    <option>Paquete económico</option>
+                    <option>Paquete familiar</option>
+                    <option>Paquete aventura</option>
+                    <option>Paquete personalizado</option>
+                    <option>Ruta Volcanes y Lago</option>
+                    <option>Ruta de las Flores Express</option>
+                    <option>Surf y Atardecer</option>
+                    <option>Ruta Arqueológica</option>
+                    <option>El Salvador en una semana</option>
+                    <option>Escapada personalizada</option>
+                  </select>
+                </section>
+
+                <section class="col-12">
+                  <label for="mensaje" class="form-label">Mensaje adicional</label>
+                  <textarea id="mensaje" class="form-control" rows="4" placeholder="Escribe alguna indicación especial"></textarea>
+                </section>
+
+                <section class="col-12">
+                  <button type="submit" class="btn btn-success w-100">Simular reserva</button>
+                </section>
+              </section>
+
+              <!-- Pamela puede usar este espacio para mostrar mensajes con JavaScript -->
+              <section id="mensajeReserva" class="mt-3"></section>
+            </form>
+          </article>
+        </section>
+      </section>
+    </section>
+
+
+    <!-- ======================================================= -->
+    <!-- SECCIÓN 5: CONTACTO E INFORMACIÓN                        -->
+    <!-- Información general de la empresa ficticia.              -->
+    <!-- ======================================================= -->
+    <section id="contacto" class="py-5">
+      <section class="container">
+        <header class="text-center mb-5">
+          <h2 class="fw-bold">Contacto e información de la empresa</h2>
+          <p class="text-muted">Datos de contacto ficticios y presentación general del servicio.</p>
+        </header>
+
+        <section class="row g-4">
+          <article class="col-lg-6">
+            <section class="card h-100 border-0 shadow p-4">
+              <h3>Explora Tours El Salvador</h3>
+              <p>
+                Somos una agencia ficticia creada para promover destinos turísticos de El Salvador.
+                Nuestro objetivo es presentar información clara, atractiva y fácil de usar para
+                personas interesadas en viajar.
+              </p>
+
+              <h4>Misión</h4>
+              <p>Promover el turismo nacional mediante una página web moderna, organizada y accesible.</p>
+
+              <h4>Experiencias</h4>
+              <ul>
+                <li>Viajes familiares</li>
+                <li>Excursiones escolares</li>
+                <li>Tours de aventura</li>
+                <li>Visitas culturales</li>
+                <li>Recorridos por playas, volcanes y pueblos vivos</li>
+              </ul>
+            </section>
+          </article>
+
+          <article class="col-lg-6">
+            <section class="card h-100 border-0 shadow p-4">
+              <h3>Medios de contacto</h3>
+              <p><strong>WhatsApp:</strong> 7000-0000</p>
+              <p><strong>Correo:</strong> contacto@exploratourssv.com</p>
+              <p><strong>Dirección:</strong> San Salvador, El Salvador</p>
+              <p><strong>Horario:</strong> Lunes a sábado, 8:00 a.m. - 5:00 p.m.</p>
+
+              <h4>Redes sociales</h4>
+              <ul>
+                <li>Facebook: Explora Tours SV</li>
+                <li>Instagram: @exploratourssv</li>
+                <li>TikTok: @exploratourssv</li>
+              </ul>
+
+              <section class="alert alert-info mt-3 mb-0">
+                Este sitio web es parte de una actividad educativa y los datos de contacto son ficticios.
+              </section>
+            </section>
+          </article>
+        </section>
+      </section>
+    </section>
+  </main>
+
+
+  <!-- ========================================================= -->
+  <!-- PIE DE PÁGINA                                             -->
+  <!-- ========================================================= -->
+  <footer class="bg-dark text-white text-center py-4">
+    <section class="container">
+      <h5 class="fw-bold">Explora Tours El Salvador</h5>
+      <p class="mb-1">Proyecto web colaborativo - Actividad cotidiana</p>
+      <p class="mb-0">HTML, CSS, Bootstrap, JavaScript, Git, GitHub y GitHub Pages</p>
+    </section>
+  </footer>
+
+
+  <!-- ========================================================= -->
+  <!-- MODALES DE INFORMACIÓN DETALLADA                          -->
+  <!-- Ventanas amigables para mostrar información de cada lugar. -->
+  <!-- Bootstrap las abre sin JS personalizado.                   -->
+  <!-- ========================================================= -->
+
+  <section class="modal fade" id="modalTunco" tabindex="-1" aria-hidden="true">
+    <section class="modal-dialog modal-lg modal-dialog-centered">
+      <article class="modal-content">
+        <header class="modal-header"><h5 class="modal-title">Playa El Tunco</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button></header>
+        <section class="modal-body"><img src="img/el-tunco.jpg" class="img-fluid rounded mb-3" alt="Playa El Tunco"><p>Playa El Tunco es uno de los destinos costeros más conocidos de El Salvador. Es popular por el surf, los restaurantes, el ambiente turístico y los atardeceres.</p><p><strong>Precio promocional:</strong> $25 por persona</p></section>
+        <footer class="modal-footer"><a href="#reserva" class="btn btn-success" data-bs-dismiss="modal">Reservar este destino</a><button class="btn btn-secondary" data-bs-dismiss="modal">Seguir explorando</button></footer>
+      </article>
+    </section>
+  </section>
+
+  <section class="modal fade" id="modalCoatepeque" tabindex="-1" aria-hidden="true">
+    <section class="modal-dialog modal-lg modal-dialog-centered">
+      <article class="modal-content">
+        <header class="modal-header"><h5 class="modal-title">Lago de Coatepeque</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button></header>
+        <section class="modal-body"><img src="img/lago-coatepeque.jpg" class="img-fluid rounded mb-3" alt="Lago de Coatepeque"><p>El Lago de Coatepeque es un lago de origen volcánico, muy visitado por sus miradores, paisajes y ambiente tranquilo.</p><p><strong>Precio promocional:</strong> $30 por persona</p></section>
+        <footer class="modal-footer"><a href="#reserva" class="btn btn-success" data-bs-dismiss="modal">Reservar este destino</a><button class="btn btn-secondary" data-bs-dismiss="modal">Seguir explorando</button></footer>
+      </article>
+    </section>
+  </section>
+
+  <section class="modal fade" id="modalSantaAna" tabindex="-1" aria-hidden="true">
+    <section class="modal-dialog modal-lg modal-dialog-centered">
+      <article class="modal-content">
+        <header class="modal-header"><h5 class="modal-title">Volcán de Santa Ana</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button></header>
+        <section class="modal-body"><img src="img/volcan-santa-ana.jpg" class="img-fluid rounded mb-3" alt="Volcán de Santa Ana"><p>El Volcán de Santa Ana, también llamado Ilamatepec, es uno de los destinos favoritos para caminatas y turismo de aventura.</p><p><strong>Precio promocional:</strong> $32 por persona</p></section>
+        <footer class="modal-footer"><a href="#reserva" class="btn btn-success" data-bs-dismiss="modal">Reservar este destino</a><button class="btn btn-secondary" data-bs-dismiss="modal">Seguir explorando</button></footer>
+      </article>
+    </section>
+  </section>
+
+  <section class="modal fade" id="modalRutaFlores" tabindex="-1" aria-hidden="true">
+    <section class="modal-dialog modal-lg modal-dialog-centered">
+      <article class="modal-content">
+        <header class="modal-header"><h5 class="modal-title">Ruta de las Flores</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button></header>
+        <section class="modal-body"><img src="img/ruta-flores.jpg" class="img-fluid rounded mb-3" alt="Ruta de las Flores"><p>La Ruta de las Flores reúne pueblos coloridos, gastronomía, café, artesanías, clima fresco y tradiciones salvadoreñas.</p><p><strong>Precio promocional:</strong> $28 por persona</p></section>
+        <footer class="modal-footer"><a href="#reserva" class="btn btn-success" data-bs-dismiss="modal">Reservar</a><button class="btn btn-secondary" data-bs-dismiss="modal">Seguir explorando</button></footer>
+      </article>
+    </section>
+  </section>
+
+  <section class="modal fade" id="modalSuchitoto" tabindex="-1" aria-hidden="true">
+    <section class="modal-dialog modal-lg modal-dialog-centered">
+      <article class="modal-content">
+        <header class="modal-header"><h5 class="modal-title">Suchitoto</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button></header>
+        <section class="modal-body"><img src="img/suchitoto.jpg" class="img-fluid rounded mb-3" alt="Suchitoto"><p>Suchitoto es conocido por sus calles coloniales, arte local, ambiente cultural y cercanía con el lago Suchitlán.</p><p><strong>Precio promocional:</strong> $27 por persona</p></section>
+        <footer class="modal-footer"><a href="#reserva" class="btn btn-success" data-bs-dismiss="modal">Reservar</a><button class="btn btn-secondary" data-bs-dismiss="modal">Seguir explorando</button></footer>
+      </article>
+    </section>
+  </section>
+
+  <section class="modal fade" id="modalJoyaCeren" tabindex="-1" aria-hidden="true">
+    <section class="modal-dialog modal-lg modal-dialog-centered">
+      <article class="modal-content">
+        <header class="modal-header"><h5 class="modal-title">Joya de Cerén</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button></header>
+        <section class="modal-body"><img src="img/joya-ceren.jpg" class="img-fluid rounded mb-3" alt="Joya de Cerén"><p>Joya de Cerén es un sitio arqueológico maya reconocido por conservar evidencias de la vida cotidiana de una antigua comunidad agrícola.</p><p><strong>Precio promocional:</strong> $20 por persona</p></section>
+        <footer class="modal-footer"><a href="#reserva" class="btn btn-success" data-bs-dismiss="modal">Reservar</a><button class="btn btn-secondary" data-bs-dismiss="modal">Seguir explorando</button></footer>
+      </article>
+    </section>
+  </section>
+
+  <section class="modal fade" id="modalTazumal" tabindex="-1" aria-hidden="true">
+    <section class="modal-dialog modal-lg modal-dialog-centered">
+      <article class="modal-content">
+        <header class="modal-header"><h5 class="modal-title">Tazumal</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button></header>
+        <section class="modal-body"><img src="img/tazumal.jpg" class="img-fluid rounded mb-3" alt="Tazumal"><p>Tazumal es un importante sitio arqueológico ubicado en Chalchuapa, Santa Ana.</p><p><strong>Precio promocional:</strong> $22 por persona</p></section>
+        <footer class="modal-footer"><a href="#reserva" class="btn btn-success" data-bs-dismiss="modal">Reservar</a><button class="btn btn-secondary" data-bs-dismiss="modal">Seguir explorando</button></footer>
+      </article>
+    </section>
+  </section>
+
+  <section class="modal fade" id="modalBoqueron" tabindex="-1" aria-hidden="true">
+    <section class="modal-dialog modal-lg modal-dialog-centered">
+      <article class="modal-content">
+        <header class="modal-header"><h5 class="modal-title">El Boquerón</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button></header>
+        <section class="modal-body"><img src="img/el-boqueron.jpg" class="img-fluid rounded mb-3" alt="El Boquerón"><p>El Boquerón es un parque natural ubicado en el volcán de San Salvador, conocido por su clima fresco, senderos y vista al cráter.</p><p><strong>Precio promocional:</strong> $18 por persona</p></section>
+        <footer class="modal-footer"><a href="#reserva" class="btn btn-success" data-bs-dismiss="modal">Reservar</a><button class="btn btn-secondary" data-bs-dismiss="modal">Seguir explorando</button></footer>
+      </article>
+    </section>
+  </section>
+
+  <section class="modal fade" id="modalCerroVerde" tabindex="-1" aria-hidden="true">
+    <section class="modal-dialog modal-lg modal-dialog-centered">
+      <article class="modal-content">
+        <header class="modal-header"><h5 class="modal-title">Cerro Verde</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button></header>
+        <section class="modal-body"><img src="img/cerro-verde.jpg" class="img-fluid rounded mb-3" alt="Cerro Verde"><p>Cerro Verde es un parque natural con clima fresco y vistas hacia volcanes y paisajes verdes.</p><p><strong>Precio promocional:</strong> $24 por persona</p></section>
+        <footer class="modal-footer"><a href="#reserva" class="btn btn-success" data-bs-dismiss="modal">Reservar</a><button class="btn btn-secondary" data-bs-dismiss="modal">Seguir explorando</button></footer>
+      </article>
+    </section>
+  </section>
+
+  <section class="modal fade" id="modalPital" tabindex="-1" aria-hidden="true">
+    <section class="modal-dialog modal-lg modal-dialog-centered">
+      <article class="modal-content">
+        <header class="modal-header"><h5 class="modal-title">El Pital</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button></header>
+        <section class="modal-body"><img src="img/el-pital.jpg" class="img-fluid rounded mb-3" alt="El Pital"><p>El Pital es una zona montañosa de Chalatenango, conocida por su clima frío y paisajes ideales para el ecoturismo.</p><p><strong>Precio promocional:</strong> $35 por persona</p></section>
+        <footer class="modal-footer"><a href="#reserva" class="btn btn-success" data-bs-dismiss="modal">Reservar</a><button class="btn btn-secondary" data-bs-dismiss="modal">Seguir explorando</button></footer>
+      </article>
+    </section>
+  </section>
+
+  <section class="modal fade" id="modalJiquilisco" tabindex="-1" aria-hidden="true">
+    <section class="modal-dialog modal-lg modal-dialog-centered">
+      <article class="modal-content">
+        <header class="modal-header"><h5 class="modal-title">Bahía de Jiquilisco</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button></header>
+        <section class="modal-body"><img src="img/bahia-jiquilisco.jpg" class="img-fluid rounded mb-3" alt="Bahía de Jiquilisco"><p>Bahía de Jiquilisco es un destino natural reconocido por sus manglares, biodiversidad y paisajes costeros.</p><p><strong>Precio promocional:</strong> $38 por persona</p></section>
+        <footer class="modal-footer"><a href="#reserva" class="btn btn-success" data-bs-dismiss="modal">Reservar</a><button class="btn btn-secondary" data-bs-dismiss="modal">Seguir explorando</button></footer>
+      </article>
+    </section>
+  </section>
+
+  <section class="modal fade" id="modalImposible" tabindex="-1" aria-hidden="true">
+    <section class="modal-dialog modal-lg modal-dialog-centered">
+      <article class="modal-content">
+        <header class="modal-header"><h5 class="modal-title">Parque Nacional El Imposible</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button></header>
+        <section class="modal-body"><img src="img/el-imposible.jpg" class="img-fluid rounded mb-3" alt="Parque Nacional El Imposible"><p>El Imposible es un parque nacional ubicado en Ahuachapán, reconocido por su bosque, ríos, senderos y riqueza natural.</p><p><strong>Precio promocional:</strong> $40 por persona</p></section>
+        <footer class="modal-footer"><a href="#reserva" class="btn btn-success" data-bs-dismiss="modal">Reservar</a><button class="btn btn-secondary" data-bs-dismiss="modal">Seguir explorando</button></footer>
+      </article>
+    </section>
+  </section>
+
+
+  <!-- ========================================================= -->
+  <!-- SCRIPTS                                                   -->
+  <!-- Bootstrap JS permite usar menú responsive, modales y       -->
+  <!-- acordeones. script.js queda para Pamela.                   -->
+  <!-- ========================================================= -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
