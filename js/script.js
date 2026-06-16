@@ -57,6 +57,27 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    // El texto de la galería "+ más lugares" también abre la sección de destinos
+    const accesoMasLugares = Array.from(document.querySelectorAll("figcaption"))
+        .find(elemento => elemento.textContent.includes("+ más lugares"));
+
+    if (accesoMasLugares) {
+        accesoMasLugares.setAttribute("role", "button");
+        accesoMasLugares.setAttribute("tabindex", "0");
+        accesoMasLugares.setAttribute("title", "Ver todos los destinos turísticos");
+
+        accesoMasLugares.addEventListener("click", () => {
+            mostrarPantalla("mejores-lugares");
+        });
+
+        accesoMasLugares.addEventListener("keydown", (evento) => {
+            if (evento.key === "Enter" || evento.key === " ") {
+                evento.preventDefault();
+                mostrarPantalla("mejores-lugares");
+            }
+        });
+    }
+
     // =========================================================
     // TAREA 2: BOTÓN "VER MÁS DETALLES" (DESPLIEGUE EN LUGARES)
     // =========================================================
