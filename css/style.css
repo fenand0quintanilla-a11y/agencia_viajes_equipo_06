@@ -74,13 +74,13 @@ aside{
 ========================= */
 
 .btn-success{
-    background:#198754;
+    background:#eef4ff;
     border:none;
     border-radius:10px;
 }
 
 .btn-success:hover{
-    background:#157347;
+    background:#eef4ff;
 }
 
 /* =========================
