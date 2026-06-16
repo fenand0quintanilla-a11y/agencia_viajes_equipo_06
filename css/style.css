@@ -96,7 +96,11 @@ h3{
     color:#198754;
     font-weight:700;
 }
+.card-header.bg-success h3,
+.card-header.bg-danger h3 {
+    color: white;
 
+}
 /* =========================
    BADGES
 ========================= */
