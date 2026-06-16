@@ -7,28 +7,27 @@ El proyecto se desarrollará como parte de la actividad cotidiana sobre creació
 
 ## Plan de trabajo
 
-El sitio web tendrá 4 páginas principales:
+El sitio web será una **single page website**. Esto significa que todo el contenido estará dentro de un solo archivo `index.html`, pero se organizará en 4 secciones principales que se mostrarán o recorrerán según los clics del usuario en el menú.
+
+## Secciones del sitio
 
 1. **Inicio**  
    Presentación general de la agencia y bienvenida al visitante.
 
 2. **Mejores lugares**  
-   Página dedicada a mostrar destinos turísticos destacados de El Salvador.
+   Sección dedicada a mostrar destinos turísticos destacados de El Salvador.
 
 3. **Elige tu destino y reserva**  
-   Página para presentar opciones de viaje, paquetes y una sección de reserva.
+   Sección para presentar opciones de viaje, paquetes y un apartado de reserva.
 
 4. **Contacto e información de la empresa**  
-   Página con formulario de contacto, datos de la empresa ficticia y medios de comunicación.
+   Sección con formulario de contacto, datos de la empresa ficticia y medios de comunicación.
 
 ## Estructura inicial del repositorio
 
 ```text
 agencia_viajes_equipo_06/
 ├── index.html
-├── mejores-lugares.html
-├── reservas.html
-├── contacto.html
 ├── README.md
 ├── css/
 │   └── style.css
@@ -43,9 +42,9 @@ agencia_viajes_equipo_06/
 | Integrante | Rol | Aporte realizado |
 |---|---|---|
 | Carlos Fernando | Coordinador del repositorio | Creación del repositorio, organización del proyecto y publicación en GitHub Pages |
-| Carlos Fernando 2 | Desarrollador HTML | Estructura principal de las páginas web y contenido informativo |
+| Carlos Fernando 2 | Desarrollador HTML | Estructura principal del archivo `index.html` y contenido informativo de las secciones |
 | Sofia Marisol | Diseñador CSS / Bootstrap | Diseño visual, estilos personalizados y adaptación responsive |
-| Pamela Fernanada | JavaScript / QA | Validación de formularios, revisión de funcionamiento y pruebas |
+| Pamela Fernanada | JavaScript / QA | Despliegue de secciones, validación de formularios, revisión de funcionamiento y pruebas |
 
 ## Tecnologías utilizadas
 
