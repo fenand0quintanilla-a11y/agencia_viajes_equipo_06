@@ -10,34 +10,50 @@ document.addEventListener("DOMContentLoaded", () => {
     // TAREA 1: NAVEGACIÓN DE UNA SOLA PÁGINA (SINGLE-PAGE APP)
     // =========================================================
     
-    // Seleccionamos todos los enlaces del menú de navegación
-    const enlacesNav = document.querySelectorAll(".nav-link");
-    // Seleccionamos todas las secciones de contenido de la página
-    const secciones = document.querySelectorAll(".content-section");
+    // Seleccionamos todos los elementos que cambian de pantalla
+    const enlacesNav = document.querySelectorAll("[data-seccion]");
+    // Seleccionamos todas las pantallas del sitio
+    const secciones = document.querySelectorAll(".pantalla");
+    const menuPrincipal = document.getElementById("menuPrincipal");
+
+    function mostrarPantalla(idPantalla) {
+        const seccionDestino = document.getElementById(idPantalla);
+
+        if (!seccionDestino) {
+            return;
+        }
+
+        // 1. Ocultar TODAS las pantallas quitando la clase 'activa'
+        secciones.forEach(seccion => seccion.classList.remove("activa"));
+
+        // 2. Mostrar UNICAMENTE la pantalla seleccionada agregando 'activa'
+        seccionDestino.classList.add("activa");
+
+        // 3. Actualizar el menu visualmente
+        document.querySelectorAll(".nav-link").forEach(btn => {
+            btn.classList.toggle("active", btn.dataset.seccion === idPantalla);
+        });
+
+        // 4. Cerrar el menu responsive si esta abierto
+        if (menuPrincipal && window.bootstrap) {
+            const menuBootstrap = bootstrap.Collapse.getOrCreateInstance(menuPrincipal, {
+                toggle: false
+            });
+            menuBootstrap.hide();
+        }
+
+        // 5. Hacer scroll hacia arriba para ver la nueva pantalla desde el inicio
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }
 
     enlacesNav.forEach(enlace => {
         enlace.addEventListener("click", (evento) => {
             // Evitar que la página se recargue o salte bruscamente
             evento.preventDefault();
 
-            // Obtener el ID de la sección que queremos mostrar (ej: #inicio, #lugares)
-            const destinoId = enlace.getAttribute("href");
-            const seccionDestino = document.querySelector(destinoId);
-
-            if (seccionDestino) {
-                // 1. Ocultar TODAS las secciones quitando la clase 'active'
-                secciones.forEach(seccion => seccion.classList.remove("active"));
-                
-                // 2. Mostrar ÚNICAMENTE la sección seleccionada agregando 'active'
-                seccionDestino.classList.add("active");
-
-                // 3. Actualizar el menú visualmente (quitar 'active' del botón viejo y ponerlo al nuevo)
-                enlacesNav.forEach(btn => btn.classList.remove("active"));
-                enlace.classList.add("active");
-
-                // 4. Hacer un scroll suave hacia arriba para que la nueva pantalla se vea desde el inicio
-                window.scrollTo({ top: 0, behavior: "smooth" });
-            }
+            // Obtener el ID de la pantalla desde data-seccion (ej: reserva)
+            const destinoId = enlace.dataset.seccion;
+            mostrarPantalla(destinoId);
         });
     });
 
@@ -74,7 +90,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // TAREA 3: VALIDACIÓN DEL FORMULARIO DE CONTACTO
     // =========================================================
     
-    const formulario = document.getElementById("form-contacto");
+    const formulario = document.getElementById("formReserva");
+    const mensajeReserva = document.getElementById("mensajeReserva");
 
     if (formulario) {
         formulario.addEventListener("submit", (evento) => {
@@ -85,31 +102,47 @@ document.addEventListener("DOMContentLoaded", () => {
             const nombre = document.getElementById("nombre").value.trim();
             const correo = document.getElementById("correo").value.trim();
             const telefono = document.getElementById("telefono").value.trim();
+            const fecha = document.getElementById("fecha").value.trim();
+            const destino = document.getElementById("destino").value.trim();
+            const personas = document.getElementById("personas").value.trim();
+            const paquete = document.getElementById("paquete").value.trim();
             const mensaje = document.getElementById("mensaje").value.trim();
 
             // Expresión regular básica para verificar que el correo lleve un '@' y un '.' válido
             const estructuraCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const soloNumerosTelefono = telefono.replace(/\D/g, "");
 
             // 1. Validación: Que ningún campo quede completamente vacío
-            if (nombre === "" || correo === "" || telefono === "" || mensaje === "") {
-                alert("❌ ¡Hey! Por favor, rellena todos los campos obligatorios antes de enviar.");
+            if (nombre === "" || correo === "" || telefono === "" || fecha === "" || destino === "" || personas === "" || paquete === "" || mensaje === "") {
+                alert("Por favor, rellena todos los campos obligatorios antes de enviar.");
                 return; // Detiene el código aquí para que el usuario corrija
             }
 
             // 2. Validación: Formato de correo electrónico
             if (!estructuraCorreo.test(correo)) {
-                alert("❌ Por favor, ingresa un correo electrónico válido (ejemplo@dominio.com).");
+                alert("Por favor, ingresa un correo electrónico válido (ejemplo@dominio.com).");
                 return; // Detiene el código
             }
 
             // 3. Validación: Teléfono (mínimo 8 dígitos para El Salvador)
-            if (telefono.length < 8 || isNaN(telefono)) {
-                alert("❌ Por favor, ingresa un número de teléfono válido (mínimo 8 números).");
+            if (soloNumerosTelefono.length < 8) {
+                alert("Por favor, ingresa un número de teléfono válido (mínimo 8 números).");
+                return; // Detiene el código
+            }
+
+            if (Number(personas) < 1) {
+                alert("La cantidad de personas debe ser mayor que cero.");
                 return; // Detiene el código
             }
 
             // 4. ÉXITO: Si pasa todas las pruebas, simulamos el envío exitoso
-            alert(`¡Gracias ${nombre}! 🎉\nHemos recibido tu solicitud con éxito. Un asesor de Explora Tours se contactará contigo pronto.`);
+            if (mensajeReserva) {
+                const aviso = document.createElement("section");
+                aviso.className = "alert alert-success mb-0";
+                aviso.textContent = `Gracias ${nombre}. Tu reserva para ${destino} fue simulada correctamente.`;
+
+                mensajeReserva.replaceChildren(aviso);
+            }
             
             // Limpiar el formulario automáticamente para que quede vacío de nuevo
             formulario.reset();
