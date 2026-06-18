@@ -24,6 +24,33 @@ document.addEventListener("DOMContentLoaded", () => {
             parrafoPrincipal.textContent = "En Explora Tours El Salvador organizamos recorridos nacionales para familias, estudiantes y grupos que desean conocer los destinos más representativos del país.";
         }
 
+        const tarjetasInicio = document.querySelectorAll("#inicio .row.g-4.mt-5 .card");
+        const contenidoTarjetasInicio = [
+            {
+                titulo: "Aventura",
+                texto: "Recorridos por volcanes, miradores y espacios naturales ideales para quienes buscan una experiencia activa."
+            },
+            {
+                titulo: "Cultura",
+                texto: "Visitas a pueblos, sitios históricos y lugares que conservan parte de la identidad salvadoreña."
+            },
+            {
+                titulo: "Playa",
+                texto: "Destinos de costa para disfrutar del mar, la gastronomía local y los paisajes al atardecer."
+            }
+        ];
+
+        tarjetasInicio.forEach((tarjeta, indice) => {
+            const contenido = contenidoTarjetasInicio[indice];
+            if (!contenido) return;
+
+            const titulo = tarjeta.querySelector("h3");
+            const parrafo = tarjeta.querySelector("p");
+
+            if (titulo) titulo.textContent = contenido.titulo;
+            if (parrafo) parrafo.textContent = contenido.texto;
+        });
+
         const encabezadoDestinos = document.querySelector("#mejores-lugares header.text-center p");
         if (encabezadoDestinos) {
             encabezadoDestinos.textContent = "Elige entre destinos naturales, culturales y de playa para viajes de un día, fines de semana o recorridos grupales dentro de El Salvador.";
