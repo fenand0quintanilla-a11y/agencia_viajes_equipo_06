@@ -3,8 +3,106 @@
 // PROYECTO: EXPLORA TOURS EL SALVADOR
 // ==========================================
 
-// Esperar a que todo el documento HTML esté completamente cargado
 document.addEventListener("DOMContentLoaded", () => {
+
+    function actualizarTextosDelSitio() {
+        const barraSuperior = document.querySelectorAll("aside p");
+        if (barraSuperior[0]) {
+            barraSuperior[0].textContent = "📞 WhatsApp: 7548-7884 | ✉️ fernanda072@gmail.com";
+        }
+        if (barraSuperior[1]) {
+            barraSuperior[1].textContent = "Turismo nacional | Paquetes de un día y recorridos personalizados";
+        }
+
+        const tituloPrincipal = document.querySelector("#inicio h1");
+        if (tituloPrincipal) {
+            tituloPrincipal.textContent = "Explora volcanes, pueblos y playas de El Salvador";
+        }
+
+        const parrafoPrincipal = document.querySelector("#inicio .lead");
+        if (parrafoPrincipal) {
+            parrafoPrincipal.textContent = "En Explora Tours El Salvador organizamos recorridos nacionales para familias, estudiantes y grupos que desean conocer los destinos más representativos del país.";
+        }
+
+        const encabezadoDestinos = document.querySelector("#mejores-lugares header.text-center p");
+        if (encabezadoDestinos) {
+            encabezadoDestinos.textContent = "Elige entre destinos naturales, culturales y de playa para viajes de un día, fines de semana o recorridos grupales dentro de El Salvador.";
+        }
+
+        const textoDestacados = Array.from(document.querySelectorAll("p.text-muted"))
+            .find(parrafo => parrafo.textContent.includes("Tres lugares principales"));
+        if (textoDestacados) {
+            textoDestacados.textContent = "Tres opciones ideales para comenzar a descubrir la riqueza turística de El Salvador.";
+        }
+
+        const tituloReserva = document.querySelector("#reserva h2");
+        if (tituloReserva) {
+            tituloReserva.textContent = "Solicita información para tu viaje";
+        }
+
+        const badgeReserva = document.querySelector("#reserva .badge");
+        if (badgeReserva) {
+            badgeReserva.textContent = "Atención personalizada";
+        }
+
+        const descripcionReserva = document.querySelector("#reserva header.text-center p");
+        if (descripcionReserva) {
+            descripcionReserva.textContent = "Completa el formulario y nos pondremos en contacto para ayudarte a organizar tu recorrido.";
+        }
+
+        const tituloAntesReserva = Array.from(document.querySelectorAll("#reserva h3"))
+            .find(titulo => titulo.textContent.includes("Antes de reservar"));
+        if (tituloAntesReserva) {
+            tituloAntesReserva.textContent = "Antes de solicitar información";
+        }
+
+        const tarjetaReserva = document.querySelector("#reserva aside .card");
+        if (tarjetaReserva) {
+            const parrafo = tarjetaReserva.querySelector("p");
+            if (parrafo) {
+                parrafo.textContent = "Verifica el destino, la fecha aproximada y la cantidad de personas antes de enviar tu solicitud.";
+            }
+
+            const lista = tarjetaReserva.querySelector("ul");
+            if (lista) {
+                lista.innerHTML = `
+                    <li>Te orientaremos según el tipo de viaje que necesites.</li>
+                    <li>Los paquetes pueden adaptarse a familias, estudiantes o grupos.</li>
+                    <li>La respuesta se enviará al correo o teléfono proporcionado.</li>
+                `;
+            }
+        }
+
+        const botonFormulario = document.querySelector("#formReserva button[type='submit']");
+        if (botonFormulario) {
+            botonFormulario.textContent = "Enviar solicitud";
+        }
+
+        const contactoEmpresa = document.querySelector("#contacto article:first-child .card p");
+        if (contactoEmpresa) {
+            contactoEmpresa.textContent = "Somos una agencia dedicada a promover el turismo nacional mediante recorridos organizados, paquetes de viaje y atención personalizada para quienes desean conocer El Salvador.";
+        }
+
+        const mediosContacto = document.querySelectorAll("#contacto article:nth-child(2) .card p");
+        if (mediosContacto[0]) mediosContacto[0].innerHTML = "<strong>WhatsApp:</strong> 7548-7884";
+        if (mediosContacto[1]) mediosContacto[1].innerHTML = "<strong>Correo:</strong> fernanda072@gmail.com";
+
+        const avisoEducativo = document.querySelector("#contacto .alert");
+        if (avisoEducativo) {
+            avisoEducativo.textContent = "Escríbenos para recibir información sobre destinos, disponibilidad y paquetes turísticos nacionales.";
+        }
+
+        const footer = document.querySelector("footer .container");
+        if (footer) {
+            footer.innerHTML = `
+                <h5 class="fw-bold">Explora Tours El Salvador</h5>
+                <p class="mb-1">Turismo nacional, paquetes personalizados y recorridos por El Salvador.</p>
+                <p class="mb-0">© 2026 Explora Tours El Salvador. Todos los derechos reservados.</p>
+            `;
+        }
+    }
+
+    actualizarTextosDelSitio();
     
     // =========================================================
     // TAREA 1: NAVEGACIÓN DE UNA SOLA PÁGINA (SINGLE-PAGE APP)
@@ -135,19 +233,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // 1. Validación: Que ningún campo quede completamente vacío
             if (nombre === "" || correo === "" || telefono === "" || fecha === "" || destino === "" || personas === "" || paquete === "" || mensaje === "") {
-                alert("Por favor, rellena todos los campos obligatorios antes de enviar.");
+                alert("Por favor, completa todos los campos antes de enviar la solicitud.");
                 return; // Detiene el código aquí para que el usuario corrija
             }
 
             // 2. Validación: Formato de correo electrónico
             if (!estructuraCorreo.test(correo)) {
-                alert("Por favor, ingresa un correo electrónico válido (ejemplo@dominio.com).");
+                alert("Por favor, ingresa un correo electrónico válido.");
                 return; // Detiene el código
             }
 
             // 3. Validación: Teléfono (mínimo 8 dígitos para El Salvador)
             if (soloNumerosTelefono.length < 8) {
-                alert("Por favor, ingresa un número de teléfono válido (mínimo 8 números).");
+                alert("Por favor, ingresa un número de teléfono válido.");
                 return; // Detiene el código
             }
 
@@ -156,11 +254,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 return; // Detiene el código
             }
 
-            // 4. ÉXITO: Si pasa todas las pruebas, simulamos el envío exitoso
+            // 4. ÉXITO: Si pasa todas las pruebas, mostramos confirmación al visitante
             if (mensajeReserva) {
                 const aviso = document.createElement("section");
                 aviso.className = "alert alert-success mb-0";
-                aviso.textContent = `Gracias ${nombre}. Tu reserva para ${destino} fue simulada correctamente.`;
+                aviso.textContent = `Gracias ${nombre}. Hemos recibido tu solicitud para ${destino}. Pronto nos comunicaremos contigo por correo o teléfono.`;
 
                 mensajeReserva.replaceChildren(aviso);
             }
